@@ -12,17 +12,17 @@ It's a helping library to show text based tutorial in a single page in an androi
 Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
-  repositories {
-		...
-	  maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
 
 Add the dependency in your app module's build.gradle file
 ```
 dependencies {
-	implementation 'com.github.fahim44:Single-Page-Step-Down-Tutorial:VERSION'
+    implementation 'com.github.fahim44:Single-Page-Step-Down-Tutorial:VERSION'
 }
 ```
 
@@ -48,6 +48,8 @@ tutorialView.addItem("Title 3","Description 3","Finish")
 tutorialView.setUpListener(object : SinglePageStepDownTutorialListener {
     override fun onCompleteStep(stepNumber: Int) {
         Log.d("MainActivity", "done with item : $stepNumber")
+        // if ready to show the next step, call the following line
+        tutorialView.moveToNext()
     }
 })
 tutorialView.show()

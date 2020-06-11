@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         tutorialView.setUpListener(object : SinglePageStepDownTutorialListener {
             override fun onCompleteStep(stepNumber: Int) {
                 Log.d("MainActivity", "done with item : $stepNumber")
+                // if ready to show the next step, call the following line
+                tutorialView.moveToNext()
             }
         })
         tutorialView.show()

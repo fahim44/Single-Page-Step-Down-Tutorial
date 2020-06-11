@@ -25,7 +25,11 @@ class SinglePageStepDownTutorial(
 
     private val tuts = arrayListOf<Tut>()
 
+    private var nextStep = 0
+
     private var listener: SinglePageStepDownTutorialListener? = null
+
+    private var adapter : Adapter? = null
 
     constructor(context: Context?) : this(context, null, 0, 0)
 
@@ -109,26 +113,29 @@ class SinglePageStepDownTutorial(
         refresh()
         if (tuts.size > 1) {
             tuts[0].showing = true
-            val adapter = Adapter(context, tuts)
-            adapter.setUpListener(object : SinglePageStepDownTutorialListener {
+            adapter = Adapter(context, tuts)
+            adapter?.setUpListener(object : SinglePageStepDownTutorialListener {
                 override fun onCompleteStep(stepNumber: Int) {
-                    refresh()
-                    if (stepNumber < tuts.size - 1) {
-                        // not finished yet
-                        tuts[stepNumber + 1].showing = true
-                        adapter.notifyDataSetChanged()
-                        listener?.onCompleteStep(stepNumber + 1)
-                    } else if (stepNumber == tuts.size - 1) {
-                        //finish
-                        refresh()
-                        adapter.notifyDataSetChanged()
+                    if (stepNumber <= tuts.size - 1) {
+                        nextStep = stepNumber + 1
                         listener?.onCompleteStep(stepNumber + 1)
                     }
-
                 }
-
             })
             recyclerView?.adapter = adapter
+        }
+    }
+
+    fun moveToNext() {
+        refresh()
+        if (nextStep < tuts.size) {
+            // not finished yet
+            tuts[nextStep].showing = true
+            adapter?.notifyDataSetChanged()
+        } else if (nextStep == tuts.size) {
+            //finish
+            refresh()
+            adapter?.notifyDataSetChanged()
         }
     }
 }

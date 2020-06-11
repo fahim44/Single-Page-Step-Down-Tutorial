@@ -1,0 +1,3 @@
+include ':SinglePageStepDownTutorial'
+include ':app'
+rootProject.name = "Single Page Step-down Tutorial"

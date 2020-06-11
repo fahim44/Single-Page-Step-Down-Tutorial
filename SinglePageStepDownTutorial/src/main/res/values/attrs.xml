@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SinglePageStepDownTutorial">
+        <attr name="buttonBackgroundColor" format="color" />
+        <attr name="buttonTextColor" format="color" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="blockedTitleTextColor" format="color" />
+    </declare-styleable>
+</resources>

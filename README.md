@@ -36,6 +36,7 @@ dependencies {
         android:layout_height="match_parent"
         app:buttonBackgroundColor="@android:color/holo_red_dark"
         app:buttonTextColor="@android:color/white"
+        app:titleTextColor="@android:color/black"
         app:blockedTitleTextColor="@color/colorBlocked"/>
 ```
 

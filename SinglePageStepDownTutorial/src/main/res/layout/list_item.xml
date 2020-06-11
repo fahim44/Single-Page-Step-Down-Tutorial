@@ -10,14 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="5dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="20dp" />
+        app:layout_constraintGuide_end="5dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftGuideline"
@@ -47,7 +47,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="5dp"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </FrameLayout>
 
@@ -60,7 +60,8 @@
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:textSize="24sp"
+        android:scrollHorizontally="true"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tutNumberHolder"
         app:layout_constraintEnd_toEndOf="@id/rightGuideline"
@@ -72,10 +73,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLines="5"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@id/rightGuideline"
         app:layout_constraintStart_toEndOf="@id/tutNumberHolder"
         app:layout_constraintTop_toBottomOf="@id/tutTitleTextView" />
@@ -85,12 +87,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="5"
-        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
@@ -101,7 +104,7 @@
         android:id="@+id/tutLineView"
         android:layout_width="1dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
         app:layout_constraintLeft_toLeftOf="@id/leftGuideline"

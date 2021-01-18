@@ -10,7 +10,7 @@ It's a helping library to show text based tutorial in a single page in an androi
 ## Set-up
 
 Add it in your root build.gradle at the end of repositories:
-```
+```gradle
 allprojects {
     repositories {
         ...
@@ -20,7 +20,7 @@ allprojects {
 ```
 
 Add the dependency in your app module's build.gradle file
-```
+```gradle
 dependencies {
     implementation 'com.github.fahim44:Single-Page-Step-Down-Tutorial:VERSION'
 }
@@ -29,7 +29,7 @@ dependencies {
 ## HowTo
 
 1. Add the view in the layout file:
-```
+```xml
 <com.lamonjush.singlepagestepdowntutorial.SinglePageStepDownTutorial
         android:id="@+id/tutorialView"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@ dependencies {
 ```
 
 2. Add the tutorial items, listener and the init the view from your Activity/Fragment:
-```
+```kotlin
 val tutorialView : SinglePageStepDownTutorialListener = findViewById(R.id.tutorialView)
 tutorialView.addItem("Title 1","Description 1","Continue")
 tutorialView.addItem("Title 2","Description 2","Continue")
